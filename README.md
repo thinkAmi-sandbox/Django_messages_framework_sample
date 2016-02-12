@@ -1,0 +1,1 @@
+# Django_messages_framework_sample
