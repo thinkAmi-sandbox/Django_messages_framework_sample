@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My Site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Item Detail</h1>
+    
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {# Bootstrapと合わせて使うため、settings.pyでMESSAGE_TAGSの設定を変更しておく #}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <div id="main">
+        <p>Name: {{ object.name }}</p>
+    </div>
+</body>
+</html>
